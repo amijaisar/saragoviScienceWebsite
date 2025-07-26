@@ -4,13 +4,14 @@
 /// <reference types="unplugin-icons/types/svelte" />
 /// <reference types="@neodrag/svelte/globals" />
 
-type ObjectKeys<Obj> = Obj extends object
-	? (keyof Obj)[]
-	: Obj extends number
-		? []
-		: Obj extends Array<any> | string
-			? string[]
-			: never;
+type ObjectKeys<Obj> =
+	Obj extends object
+		? (keyof Obj)[]
+		: Obj extends number
+			? []
+			: Obj extends Array<any> | string
+				? string[]
+				: never;
 
 interface ObjectConstructor {
 	keys<ObjectType>(o: ObjectType): ObjectKeys<ObjectType>;
@@ -29,3 +30,7 @@ type Unpromisify<PromiseLike> =
 interface Array<T> {
 	fill<T extends any>(value: T, start?: number | undefined, end?: number | undefined): T[];
 }
+declare module '*.svelte' {
+	export { SvelteComponent as default } from 'svelte';
+  }
+  

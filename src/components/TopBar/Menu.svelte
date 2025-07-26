@@ -5,12 +5,30 @@
 </script>
 
 <section class="container" class:dark={preferences.theme.scheme === 'dark'}>
-	{#each Object.entries(menu) as Array<[any, any]> as [_, val]}
-		<button class="menu-item" disabled={val.disabled}>{val.title}</button>
+	{#each Object.entries(menu) as [_, val]}
+		{#if val.href}
+			<a
+				href={val.href}
+				class="menu-item"
+				rel="noopener noreferrer"
+			>
+				{val.title}
+			</a>
+		{:else}
+			<button
+				class="menu-item"
+				on:click={() => val.action?.()}
+				disabled={val.disabled}
+			>
+				{val.title}
+			</button>
+		{/if}
+
 		{#if val.breakAfter}
 			<div class="divider"></div>
 		{/if}
 	{/each}
+
 </section>
 
 <style>

@@ -6,7 +6,11 @@
 	import ContextMenu from './ContextMenu.svelte';
 	import SystemUpdate from './SystemUpdate.svelte';
 	import WindowsArea from './Window/WindowsArea.svelte';
+	
+	// 👇 NEW
+	import PageWindowsArea from '🍎/components/pages/PageWindowsArea.svelte';
 
+	
 	const isMac = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform);
 
 	if (!isMac) {
@@ -25,6 +29,7 @@
 	<main>
 		<TopBar />
 		<WindowsArea />
+		<PageWindowsArea /> <!-- 👈 RECOMMENDED -->
 		<Dock />
 	</main>
 

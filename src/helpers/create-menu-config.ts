@@ -1,42 +1,37 @@
-const apple_menu = {
-	title: 'apple',
+import { apps } from '../state/apps.svelte';
+import { pages } from '../state/pages';
+
+const science = {
+	title: 'saragovi.science',
 	menu: {
-		'about-this-mac': {
-			title: 'About This Mac',
+		'about-the-logo': {
+			title: 'About the logo',
+			action: () => {
+				console.log('✅ Menu: aboutLogo clicked');
+				pages.open('aboutLogo');
+			},
 			breakAfter: true,
 		},
-		'system-preferences': {
-			title: 'System Preferences...',
+		'Lund University Site': {
+			title: 'LU Website',
+			action: () => {
+				console.log('🌐 Menu: LU Website clicked');
+				window.open('https://www.lunduniversity.lu.se/', '_blank', 'noopener,noreferrer');
+			},
 		},
-		'app-store': {
-			title: 'App Store...',
+
+		'LTH': {
+			title: 'LTH',
+			action: () => {
+				console.log('🌐 Menu: LTH clicked');
+				window.open('https://www.lunduniversity.lu.se/lucat/group/v1000170', '_blank', 'noopener,noreferrer');
+			},
 			breakAfter: true,
-		},
-		'recent-items': {
-			title: 'Recent Items',
-			breakAfter: true,
-		},
-		'force-quit': {
-			title: 'Force Quit...',
-			breakAfter: true,
-		},
-		sleep: {
-			title: 'Sleep',
-		},
-		restart: {
-			title: 'Restart...',
-		},
-		shutdown: {
-			title: 'Shut Down...',
-			breakAfter: true,
-		},
-		'lock-screen': {
-			title: 'Lock Screen',
-		},
-		logout: {
-			title: 'Log Out User...',
 		},
 	},
 };
 
-export const create_menu_config = <T extends {}>(et: T) => ({ apple: apple_menu, ...et });
+export const create_menu_config = <T extends {}>(et: T) => ({
+	apple: science,
+	...et,
+});

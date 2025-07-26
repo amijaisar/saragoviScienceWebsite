@@ -16,7 +16,7 @@
 	{/await}
 {:else if app_id === 'vscode'}
 	{#await import('./VSCode/VSCode.svelte') then { default: VSCode }}
-		<VSCode {is_being_dragged} />
+		<VSCode />
 	{/await}
 {:else if app_id === 'calculator'}
 	{#await import('./Calculator/Calculator.svelte') then { default: Calculator }}

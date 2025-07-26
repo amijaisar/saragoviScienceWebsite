@@ -1,5 +1,6 @@
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import UnpluginIcons from 'unplugin-icons/vite';
+import { FileSystemIconLoader } from 'unplugin-icons/loaders'; // 👈 added
 import { defineConfig } from 'vite';
 import { imagetools } from 'vite-imagetools';
 import { VitePWA } from 'vite-plugin-pwa';
@@ -13,7 +14,14 @@ export default defineConfig({
 		svelte(),
 		prefetch(),
 
-		UnpluginIcons({ autoInstall: true, compiler: 'svelte' }),
+		UnpluginIcons({
+			autoInstall: true,
+			compiler: 'svelte',
+			customCollections: {
+				custom: FileSystemIconLoader('./src/icons', svg => svg), // 👈 added this block
+			},
+		}),
+
 		VitePWA({
 			includeAssets: [
 				'robots.txt',
@@ -57,6 +65,7 @@ export default defineConfig({
 				],
 			},
 		}),
+
 		imagetools({}),
 	],
 	resolve: {

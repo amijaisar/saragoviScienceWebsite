@@ -14,7 +14,7 @@ export const apps = $state({
 		// 'system-preferences': false,
 
 		'purus-twitter': false,
-		'view-source': true,
+		'view-source': false,
 
 		vercel: true,
 	} as Record<AppID, boolean>,

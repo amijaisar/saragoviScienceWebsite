@@ -1,386 +1,228 @@
 import { create_menu_config } from '🍎/helpers/create-menu-config';
+import { pages } from '🍎/state/pages';
+
+const openTeamWindow = () => {
+	pages.open('team');
+};
+
+
+
+
+const social_menu = {
+	title: 'Social',
+	menu: {
+		github: {
+			title: 'GitHub',
+			action: () => window.open('https://github.com', '_blank'),
+			icon: 'mdi/github',
+		},
+		twitter: {
+			title: 'Twitter',
+			action: () => window.open('https://twitter.com', '_blank'),
+			icon: 'mdi/twitter',
+		},
+		gitlab: {
+			title: 'GitLab',
+			action: () => window.open('https://gitlab.com', '_blank'),
+			icon: 'mdi/gitlab',
+		},
+	},
+};
+
 
 export const finder_menu_config = create_menu_config({
 	default: {
-		title: 'Finder',
+		title: 'Vision',
 		menu: {
 			'about-finder': {
-				title: 'About Finder',
+				title: 'Exciting future',
 				breakAfter: true,
 			},
 			preferences: {
-				title: 'Preferences',
+				title: 'InBio Elctronics',
 				breakAfter: true,
 			},
 			'empty-trash': {
-				title: 'Empty Trash',
+				title: 'MetaBiology',
 				breakAfter: true,
 			},
 			'hide-finder': {
-				title: 'Hide Finder',
+				title: 'Silca',
 			},
-			'hide-others': {
-				title: 'Hide Others',
-			},
-			'show-all': {
-				title: 'Show All',
-				disabled: true,
-			},
+
 		},
 	},
 
-	file: {
-		title: 'File',
-		menu: {
-			'new-finder-window': {
-				title: 'New Finder Window',
+				file: {
+					title: 'Team',
+					menu: {
+						'new-finder-window': {
+				title: 'Principal investigator',
+				action: () => openTeamWindow()
 			},
 			'new-folder': {
-				title: 'New Folder',
+				title: 'Postdocs',
+				action: () => openTeamWindow()
 			},
 			'new-folder-with-selection': {
-				title: 'New Folder with Selection',
-				disabled: true,
+				title: 'PhD students',
+				action: () => openTeamWindow()
 			},
 			'new-smart-folder': {
-				title: 'New Smart Folder',
+				title: 'Master students',
+				action: () => openTeamWindow()
 			},
 			'new-tab': {
-				title: 'New tab',
+				title: 'Interns',
+				action: () => openTeamWindow()
 			},
-			open: {
-				title: 'Open',
-				disabled: true,
+			'open': {
+				title: 'Undergrads and others',
+				action: () => openTeamWindow()
 			},
 			'open-with': {
-				title: 'Open With',
-				disabled: true,
+				title: 'Visiting',
+				action: () => openTeamWindow()
 			},
-			print: {
-				title: 'Print',
+			'print': {
+				title: 'Lab management and admin',
 				disabled: true,
+				action: () => openTeamWindow()
 			},
-			'close-window': {
-				title: 'Close Window',
-				disabled: true,
+			'join': {
+				title: 'Join the team',
+				disabled: false,
 				breakAfter: true,
+				action: () => openTeamWindow()
 			},
 
-			'get-info': {
-				title: 'Get Info',
-			},
-			rename: {
-				title: 'Rename',
-				disabled: true,
-				breakAfter: true,
-			},
 
-			compress: {
-				title: 'Compress',
-				disabled: true,
-				breakAfter: true,
-			},
-
-			duplicate: {
-				title: 'Duplicate',
-				disabled: true,
-			},
-			'make-alias': {
-				title: 'Make Alias',
-				disabled: true,
-			},
-			'quick-look': {
-				title: 'Quick Look',
-				disabled: true,
-			},
-			'show-original': {
-				title: 'Show Original',
-				disabled: true,
-			},
-			'add-to-sidebar': {
-				title: 'Add to Sidebar',
-				disabled: true,
-				breakAfter: true,
-			},
-
-			'move-to-trash': {
-				title: 'Move to Trash',
-				disabled: true,
-			},
-			eject: {
-				title: 'Eject',
-				disabled: true,
-				breakAfter: true,
-			},
-
-			find: {
-				title: 'Find',
-				breakAfter: true,
-			},
-
-			tags: {
-				title: 'Tags...',
-				disabled: true,
-			},
+			
 		},
 	},
 
 	edit: {
-		title: 'Edit',
+		title: 'Publications',
 		menu: {
 			undo: {
-				title: 'Undo',
-				disabled: true,
+				title: 'Highlights',
+				disabled: false,
+				breakAfter: true,
 			},
 			redo: {
-				title: 'Redo',
-				disabled: true,
-				breakAfter: true,
+				title: 'Peer reviewd',
+				disabled: false,
 			},
 
 			cut: {
-				title: 'Cut',
-				disabled: true,
+				title: 'Rxiv',
+				disabled: false,
 			},
 			copy: {
-				title: 'Copy',
-				disabled: true,
+				title: 'Sneak peak',
+				disabled: false,
 			},
-			paste: {
-				title: 'Paste',
-				disabled: true,
-			},
-			'select-all': {
-				title: 'Select All',
-				disabled: true,
-				breakAfter: true,
-			},
-
-			'show-clipboard': {
-				title: 'Show Clipboard',
-				breakAfter: true,
-			},
-
-			'start-dictation': {
-				title: 'Start Dictation...',
-			},
-			'emoji-and-symbols': {
-				title: 'Emoji & Symbols',
-			},
+			
 		},
 	},
 
 	view: {
-		title: 'View',
+		title: 'Impact',
 		menu: {
 			'as-icons': {
-				title: 'As Icons',
-				disabled: true,
+				title: 'e-waste',
+				disabled: false,
 			},
 			'as-list': {
-				title: 'As List',
-				disabled: true,
+				title: '(Opto-)electronics',
+				disabled: false,
 			},
 			'as-columns': {
-				title: 'As Columns',
-				disabled: true,
+				title: 'Food & Agriculture',
+				disabled: false,
 			},
 			'as-gallery': {
-				title: 'As Gallery',
-				disabled: true,
-				breakAfter: true,
+				title: 'Smart Medicine',
+				disabled: false,
 			},
 
 			'use-stacks': {
-				title: 'Use Stacks',
+				title: 'BrainX',
+				breakAfter: true,
 			},
 			'sort-by': {
-				title: 'Sort By',
-				menu: {},
-			},
-			'clean-up': {
-				title: 'Clean Up',
-				disabled: true,
-			},
-			'clean-up-by': {
-				title: 'Clean Up By',
-				disabled: true,
-				breakAfter: true,
+				title: 'Deep learning',
 				menu: {},
 			},
 
-			'hide-sidebar': {
-				title: 'Hide Sidebar',
-				disabled: true,
-			},
-			'show-preview': {
-				title: 'Show Preview',
-				disabled: true,
-				breakAfter: true,
-			},
-
-			'hide-toolbar': {
-				title: 'Hide Toolbar',
-				disabled: true,
-			},
-			'show-all-tabs': {
-				title: 'Show All Tabs',
-				disabled: true,
-			},
-			'show-tab-bar': {
-				title: 'Show Tab Bar',
-				disabled: true,
-			},
-			'show-path-bar': {
-				title: 'Show Path Bar',
-				disabled: true,
-			},
-			'show-status-bar': {
-				title: 'Show Status Bar',
-				disabled: true,
-				breakAfter: true,
-			},
-
-			'customize-toolbar': {
-				title: 'Customize Toolbar...',
-				disabled: true,
-				breakAfter: true,
-			},
-
-			'show-view-options': {
-				title: 'Show View Options',
-			},
-			'show-preview-options': {
-				title: 'Show Preview Options',
-				disabled: true,
-				breakAfter: true,
-			},
-
-			'enter-full-screen': {
-				title: 'Enter Full Screen',
-				disabled: true,
+			'Talent development': {
+				title: 'Talent development',
+				menu: {},
 			},
 		},
 	},
 
 	go: {
-		title: 'Go',
+		title: 'Spinouts',
 		menu: {
-			back: {
-				title: 'Back',
+			LivingFilters: {
+				title: 'LivingFilters',
+				disabled: false,
+			},			CellBiology: {
+				title: 'Cell Biology',
 				disabled: true,
 			},
-			forward: {
-				title: 'Forward',
+			InBioTech: {
+				title: 'InBio Tech',
 				disabled: true,
 			},
-			'enclosing-folder': {
-				title: 'Enclosing Folder',
-				breakAfter: true,
-			},
-
-			recents: {
-				title: 'Recents',
-			},
-			documents: {
-				title: 'Documents',
-			},
-			desktop: {
-				title: 'Desktop',
-			},
-			downloads: {
-				title: 'Downloads',
-			},
-			home: {
-				title: 'Home',
-			},
-			computer: {
-				title: 'Computer',
-			},
-			airdrop: {
-				title: 'Airdrop',
-			},
-			network: {
-				title: 'Network',
-			},
-			'icloud-drive': {
-				title: 'iCloud Drive',
-			},
-			applications: {
-				title: 'Applications',
-			},
-			utilities: {
-				title: 'Utilities',
-				breakAfter: true,
-			},
-
-			'go-to-folder': {
-				title: 'Go to Folder',
-			},
-			'connect-to-server': {
-				title: 'Connect to Server',
+			DesignedFood: {
+				title: 'Designed Food',
+				disabled: true,
 			},
 		},
 	},
 
 	window: {
-		title: 'Window',
+		title: 'Network',
 		menu: {
-			minimize: {
-				title: 'Minimize',
+			ProteinDesign: {
+				title: 'Protein Design',
+				disabled: false,
+			},
+			SemiconductorTech: {
+				title: 'Semiconductor Tech',
+				disabled: false,
+			},
+			Microb: {
+				title: 'Microbial Factories',
+				disabled: false,
+			},
+			CellBiology: {
+				title: 'Cell Biology',
 				disabled: true,
 			},
-			zoom: {
-				title: 'Zoom',
+			Neruscience: {
+				title: 'Neuroscience',
 				disabled: true,
-			},
-			'move-window-to-left-side-of-screen': {
-				title: 'Move Window to Left Side of Screen',
-				disabled: true,
-			},
-			'move-window-to-right-side-of-screen': {
-				title: 'Move Window to Right Side of Screen',
-				disabled: true,
-			},
-			'cycle-through-windows': {
-				title: 'Cycle Through Windows',
-				breakAfter: true,
-			},
-
-			'show-previous-tab': {
-				title: 'Show Previous Tab',
-				disabled: true,
-			},
-			'show-next-tab': {
-				title: 'Show Next Tab',
-				disabled: true,
-			},
-			'move-tab-to-new-window': {
-				title: 'Move Tab to New Window',
-				disabled: true,
-			},
-			'merge-all-windows': {
-				title: 'Merge all Windows',
-				disabled: true,
-				breakAfter: true,
-			},
-
-			'bring-all-to-front': {
-				title: 'Bring All to Front',
 			},
 		},
 	},
 
 	help: {
-		title: 'Help',
+		title: 'Contact',
 		menu: {
-			'send-finder-feedback': {
-				title: 'Send Finder Feedback',
+			'Amijai Saragovi, PhD': {
+				title: 'Email Amijai',
 				breakAfter: true,
 			},
-			'macos-help': {
-				title: 'macOS Help',
+			'Website feedback': {
+				title: 'Website help',
 			},
 		},
 	},
+
+	social: social_menu,
+
 });
+

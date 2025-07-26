@@ -5,7 +5,9 @@
 	import WorksIcon from '~icons/ic/round-workspaces';
 	import GithubIcon from '~icons/mdi/github';
 	import DevToIcon from '~icons/mdi/dev-to';
-
+	import GitlabIcon from '~icons/mdi/gitlab';
+	import About from '~icons/mdi/about';
+	
 	function external(node: HTMLAnchorElement) {
 		node.rel = 'noopener noreferrer';
 		node.target = '_blank';
@@ -14,51 +16,32 @@
 
 <section class="container">
 	<header class="titlebar app-window-drag-handle">
-		<span>About the Developer</span>
+		<span>Protein Design GitTicker</span>
 	</header>
 
 	<aside class:light={preferences.theme.scheme === 'light'}>
 		<nav>
-			<a href="https://www.puruvj.dev/blog" use:external> <BlogIcon /> Blog </a>
-			<a href="https://www.puruvj.dev/works" use:external> <WorksIcon /> Works </a>
-
+			<a href="https://gitlab.com/" use:external> <GitlabIcon /> Gitlab </a>
+			<a href="https://github.com/" use:external> <GithubIcon /> Github </a>
+			
 			<hr />
 
-			<a href="https://www.puruvj.dev/twitter" use:external>
-				<TwitterIcon />
-				Twitter
-			</a>
-			<a href="https://www.puruvj.dev/github" use:external> <GithubIcon /> Github </a>
-			<a href="https://www.puruvj.dev/devto" use:external> <DevToIcon /> Dev.to </a>
+
+		
 		</nav>
 	</aside>
 
 	<section class="content">
-		<img height="200" width="200" src="/purus-profile/puru.webp" alt="Puru Vijay Profile pic" />
+
 
 		<br />
 
-		<h1>Hi, I'm Puru</h1>
+		<h1>Git Ticker</h1>
 
 		<h2>
-			I'm the creator of macOS Web, which you're on right now
-			<img src="/emojis/wink.png" alt="Wink emoji" class="emoji" />
+			Coming soon to saragovi.science
 		</h2>
 
-		<br /><br />
-
-		<p>
-			I am a fullstack web developer, with an infinite amount of love for frontend web development,
-			esp JavaScript, TypeScript, and for frontend frameworks like Svelte, Vue and React
-			<img src="/emojis/star-struck.png" alt="Star Struck face emoji" class="emoji" />
-		</p>
-
-		<br /><br />
-
-		<p>
-			However, my love for tech doesn't end there. I enjoy writing backend APIs, scripts, working
-			with databases, and my fav platforms are NodeJS, Deno and Go
-		</p>
 	</section>
 </section>
 

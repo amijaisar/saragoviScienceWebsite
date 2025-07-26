@@ -1,3 +1,5 @@
+<!-- TODO: Replace this with a conference notes ticker -->
+
 <script lang="ts">
 	import Plus from '~icons/ic/outline-plus';
 	import Equal from '~icons/ic/round-equals';

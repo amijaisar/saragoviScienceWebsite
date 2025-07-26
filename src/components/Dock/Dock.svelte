@@ -59,7 +59,8 @@
 		onmousemove={(event) => (dock_mouse_x = event.x)}
 		onmouseleave={() => (dock_mouse_x = null)}
 	>
-		{#each Object.entries(apps_config) as [appID, config]}
+		{#each Object.entries(apps_config).filter(([_, config]) => config.showInDock !== false) as [appID, config]}
+
 			{#if config.dock_breaks_before}
 				<div class="divider" aria-hidden="true"></div>
 			{/if}
